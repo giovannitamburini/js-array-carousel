@@ -1,8 +1,47 @@
-/* debug */
 
+/* debug */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#carousel {
+    position: relative;
+}
+
+#start-arrow,
+#end-arrow {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#start-arrow {
+    top: 0;
+}
+
+#end-arrow {
+    bottom: 0;
+}
+
+#carousel-active-img {
+    height: 45vw;
+    width: 90vw;
+    object-fit: cover;
+}
+
