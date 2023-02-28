@@ -61,6 +61,11 @@ endArrowElement.addEventListener('click', function () {
     //devo aumentare il valore dell'indice di un'unità
     indexSrc++;
 
+    //condizione di ciclicità infinita
+    if (indexSrc > images.length - 1) {
+        indexSrc = 0;
+    }
+
     //mostro nel DOM l'immagine contenuta nella lista nella posizione corrispondente al valore dell'indice
     carouselActiveImgElement.src = images [indexSrc];
 })
@@ -72,6 +77,11 @@ startArrowElement.addEventListener('click', function () {
 
     //devo diminuire il valore dell'indice di un'unità
     indexSrc--;
+
+    //condizione di ciclicità infinita
+    if (indexSrc < 0) {
+        indexSrc = images.length - 1;
+    }
 
     //mostro nel DOM l'immagine contenuta nella lista nella posizione corrisponde al valore dell'indice */
     carouselActiveImgElement.src = images [indexSrc];
