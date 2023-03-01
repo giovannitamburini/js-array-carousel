@@ -45,6 +45,9 @@ const startArrowElement = document.getElementById("start-arrow");
 const endArrowElement = document.getElementById("end-arrow");
 const carouselActiveImgElement = document.getElementById("carousel-active-img");
 
+
+let previewCardsElement = document.getElementById('preview-cards');
+
 // creo una variabile di valore zero che utilizzerò per l'src dell'immagine
 let indexSrc = 0;
 
@@ -56,18 +59,26 @@ carouselActiveImgElement.src = images [indexSrc];
 /* -> premendo il pulsante in basso:
    ° devo aumentare il valore dell'indice di un'unità
    ° mostro nel DOM l'immagine contenuta nella lista nella posizione corrispondente al valore dell'indice */
-endArrowElement.addEventListener('click', function () {
+endArrowElement.addEventListener('click', function () { 
 
     //devo aumentare il valore dell'indice di un'unità
     indexSrc++;
 
-    //condizione di ciclicità infinita
+    //bonus1: condizione di ciclicità infinita
     if (indexSrc > images.length - 1) {
         indexSrc = 0;
     }
 
     //mostro nel DOM l'immagine contenuta nella lista nella posizione corrispondente al valore dell'indice
     carouselActiveImgElement.src = images [indexSrc];
+
+    document.getElementsByClassName('card')[indexSrc - 1].classList.remove('preview-borders');
+
+    //creo un bordo attorno alla miniatura dell'immagine mostrata
+    
+    document.getElementsByClassName('card')[indexSrc].classList.add('preview-borders');
+    
+
 })
 
 /* -> premendo il pulsante in alto:
@@ -78,11 +89,17 @@ startArrowElement.addEventListener('click', function () {
     //devo diminuire il valore dell'indice di un'unità
     indexSrc--;
 
-    //condizione di ciclicità infinita
+    //bonus1: condizione di ciclicità infinita
     if (indexSrc < 0) {
         indexSrc = images.length - 1;
     }
 
     //mostro nel DOM l'immagine contenuta nella lista nella posizione corrisponde al valore dell'indice */
     carouselActiveImgElement.src = images [indexSrc];
+
+    document.getElementsByClassName('card')[indexSrc + 1].classList.remove('preview-borders');
+
+    //creo un bordo attorno alla miniatura dell'immagine mostrata
+    
+    document.getElementsByClassName('card')[indexSrc].classList.add('preview-borders');
 })

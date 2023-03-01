@@ -7,6 +7,12 @@
     font-family: sans-serif;
 }
 
+img {
+    display: block;
+}
+/* /debug */
+
+
 .container {
     display: flex;
     flex-wrap: nowrap;
@@ -43,7 +49,32 @@
 
 #carousel-active-img {
     height: 40vw;
-    width: 90vw;
+    width: 80vw;
     object-fit: cover;
 }
 
+
+/* BONUS 2 */
+#preview {
+    height: 40vw;
+    width: 15vw;
+    position: relative;
+}
+
+#preview-cards {
+    height: 100%;
+}
+
+#preview img {
+    height: calc(100% / 5 );
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+/* classe da aggiungere alla preview dell'immagine mostrata */
+
+.preview-borders {
+    border: 2px solid white;
+}
