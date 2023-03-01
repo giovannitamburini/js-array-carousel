@@ -67,28 +67,31 @@ endArrowElement.addEventListener('click', function () {
     //bonus1: condizione di ciclicità infinita
     if (indexSrc > images.length - 1) {
         indexSrc = 0;
+
+        //tolgo il bordo attorno alla miniatura dell'immagine precedente
         document.getElementsByClassName('card')[images.length - 1].classList.remove('preview-borders');
     }
 
     if (indexSrc != 0) {
+
+        //tolgo il bordo attorno alla miniatura dell'immagine precedente
         document.getElementsByClassName('card')[indexSrc - 1].classList.remove('preview-borders');
     }
 
     //mostro nel DOM l'immagine contenuta nella lista nella posizione corrispondente al valore dell'indice
     carouselActiveImgElement.src = images [indexSrc];
 
-    // document.getElementsByClassName('card')[indexSrc - 1].classList.remove('preview-borders');
-
     //creo un bordo attorno alla miniatura dell'immagine mostrata
 
     document.getElementsByClassName('card')[indexSrc].classList.add('preview-borders');
-
 })
 
 /* -> premendo il pulsante in alto:
    ° devo diminuire il valore dell'indice di un'unità
    ° mostro nel DOM l'immagine contenuta nella lista nella posizione corrispondente al valore dell'indice */
 startArrowElement.addEventListener('click', function () {
+
+    document.getElementsByClassName('card')[indexSrc].classList.remove('preview-borders');
 
     //devo diminuire il valore dell'indice di un'unità
     indexSrc--;
@@ -97,19 +100,19 @@ startArrowElement.addEventListener('click', function () {
     if (indexSrc < 0) {
         indexSrc = images.length - 1;
 
-        document.getElementsByClassName('card')[0 ].classList.remove('preview-borders');
+        //tolgo il bordo attorno alla miniatura dell'immagine precedente
+        // document.getElementsByClassName('card')[0].classList.remove('preview-borders');
     }
 
     //mostro nel DOM l'immagine contenuta nella lista nella posizione corrisponde al valore dell'indice */
     carouselActiveImgElement.src = images [indexSrc];
 
-    if (indexSrc != images.length - 1) {
-        
-        document.getElementsByClassName('card')[indexSrc + 1].classList.remove('preview-borders');
-    }
+    // if (indexSrc != images.length - 1) {
 
+    //     //tolgo il bordo attorno alla miniatura dell'immagine precedente
+    //     // document.getElementsByClassName('card')[indexSrc + 1].classList.remove('preview-borders');
+    // }
 
     //creo un bordo attorno alla miniatura dell'immagine mostrata
-    
     document.getElementsByClassName('card')[indexSrc].classList.add('preview-borders');
 })

@@ -77,4 +77,5 @@ img {
 
 .preview-borders {
     border: 2px solid white;
+    scale: 1.1;
 }
